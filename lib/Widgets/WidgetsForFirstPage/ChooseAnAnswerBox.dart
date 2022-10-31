@@ -9,7 +9,7 @@ class ChooseAnAnswerBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 5),
-      child: Container(
+      child: SizedBox(
         height: 23,
         width: 150,
         //color: Colors.amber,
