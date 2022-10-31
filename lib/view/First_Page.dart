@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:quizapp2/controller/provider.dart';
-import '../utilities/List_of_Quesitions&Answers/ListOfAnswers.dart';
-import '../utilities/WidgetsForFirstPage/ChooseAnAnswerBox.dart';
-import '../utilities/WidgetsForFirstPage/DividerToDivideQuestionAndAnswer.dart';
-import '../utilities/List_of_Quesitions&Answers/ListOfQuestion.dart';
-import '../utilities/WidgetsForFirstPage/QuestionBox.dart';
-import '../utilities/WidgetsForFirstPage/QuestionMarkIcon.dart';
-import '../utilities/WidgetsForFirstPage/QuestionNumberIndex.dart';
-import '../utilities/WidgetsForFirstPage/option_box.dart';
+import '../Widgets/List_of_Quesitions&Answers/ListOfAnswers.dart';
+import '../Widgets/WidgetsForFirstPage/ChooseAnAnswerBox.dart';
+import '../Widgets/WidgetsForFirstPage/DividerToDivideQuestionAndAnswer.dart';
+import '../Widgets/List_of_Quesitions&Answers/ListOfQuestion.dart';
+import '../Widgets/WidgetsForFirstPage/QuestionBox.dart';
+import '../Widgets/WidgetsForFirstPage/QuestionMarkIcon.dart';
+import '../Widgets/WidgetsForFirstPage/QuestionNumberIndex.dart';
+import '../Widgets/WidgetsForFirstPage/option_box.dart';
 import 'Result_Page.dart';
 
 class FirstPage extends StatelessWidget {
