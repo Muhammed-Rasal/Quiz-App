@@ -2,21 +2,23 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:quizapp2/controller/provider.dart';
-import '../Widgets/List_of_Quesitions&Answers/ListOfAnswers.dart';
-import '../Widgets/WidgetsForFirstPage/ChooseAnAnswerBox.dart';
-import '../Widgets/WidgetsForFirstPage/DividerToDivideQuestionAndAnswer.dart';
-import '../Widgets/List_of_Quesitions&Answers/ListOfQuestion.dart';
-import '../Widgets/WidgetsForFirstPage/QuestionBox.dart';
-import '../Widgets/WidgetsForFirstPage/QuestionMarkIcon.dart';
-import '../Widgets/WidgetsForFirstPage/QuestionNumberIndex.dart';
-import '../Widgets/WidgetsForFirstPage/option_box.dart';
-import 'Result_Page.dart';
+import '../../controller/index_controller.dart';
+import '../../utilities/list_of_answers.dart';
+import '../../utilities/list_of_questions.dart';
+import '../Widgets/choose_an_answer_box.dart';
+import '../Widgets/option_box.dart';
+import '../Widgets/question_answer_divider.dart';
+import '../Widgets/question_box.dart';
+import '../Widgets/question_mark_icon.dart';
+import '../Widgets/question_number_index.dart';
+import 'result_screen.dart';
 
 class FirstPage extends StatelessWidget {
   int indexForQuestionNumber = 1;
   int selectedOption = 0;
   int marksObtainedFromCorrectAnswer = 0;
+
+  FirstPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -82,14 +84,14 @@ class FirstPage extends StatelessWidget {
 
           //Main Column
           children: [
-            Consumer<ChangeIndex>(builder: (context, provider, child) {
+            Consumer<IndexController>(builder: (context, provider, child) {
               indexForQuestionNumber = provider.currentQuestionIndex;
               selectedOption = provider.optionSelected;
               return QuestionNumberIndex(
                 questionNumber: indexForQuestionNumber,
               );
             }),
-            Consumer<ChangeIndex>(builder: (context, provider, child) {
+            Consumer<IndexController>(builder: (context, provider, child) {
               indexForQuestionNumber = provider.currentQuestionIndex;
 
               return QuestionBox(
@@ -98,7 +100,7 @@ class FirstPage extends StatelessWidget {
             const DividerToDivideQuestionAndAnswer(),
             const QuestionMarkIcon(),
             const ChooseAnAnswerBox(),
-            Consumer<ChangeIndex>(builder: (context, provider, child) {
+            Consumer<IndexController>(builder: (context, provider, child) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -130,7 +132,8 @@ class FirstPage extends StatelessWidget {
                     indexForQuestionNumber: provider.currentQuestionIndex,
                     providerIndexForOption: 4,
                   ),
-                  Consumer<ChangeIndex>(builder: (context, provider, child) {
+                  Consumer<IndexController>(
+                      builder: (context, provider, child) {
                     indexForQuestionNumber = provider.currentQuestionIndex;
                     selectedOption = provider.optionSelected;
 

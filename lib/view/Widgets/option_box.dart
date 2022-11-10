@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import '../../controller/provider.dart';
+
+import '../../controller/index_controller.dart';
 
 class OptionBox extends StatelessWidget {
   OptionBox({
@@ -14,7 +15,6 @@ class OptionBox extends StatelessWidget {
     required this.optionSelected,
   }) : super(key: key);
 
-  //int selectedOption=1;
   final String optionIndex;
   final int indexForQuestionNumber;
   final List optionParameter;
@@ -24,7 +24,7 @@ class OptionBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ChangeIndex>(builder: (context, provider, child) {
+    return Consumer<IndexController>(builder: (context, provider, child) {
       Color changeColor() {
         if (provider.optionSelected == 1 && providerIndexForOption == 1) {
           return Colors.black;

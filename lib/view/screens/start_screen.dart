@@ -1,11 +1,9 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:quizapp2/controller/provider.dart';
-
-import 'First_Page.dart';
+import '../../controller/index_controller.dart';
+import 'home_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -29,7 +27,6 @@ class HomeScreen extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
-              //actionsAlignment: MainAxisAlignment.spaceBetween,
               actions: [
                 TextButton(
                   onPressed: () {
@@ -38,9 +35,7 @@ class HomeScreen extends StatelessWidget {
                   },
                   child: const Text(
                     'Yes',
-                    style: TextStyle(color: Colors.red
-                        //  backgroundColor: Colors.red
-                        ),
+                    style: TextStyle(color: Colors.red),
                   ),
                 ),
                 TextButton(
@@ -55,14 +50,14 @@ class HomeScreen extends StatelessWidget {
         );
         return shouldPop!;
       },
-      child: Consumer<ChangeIndex>(builder: (context, provider, child) {
+      child: Consumer<IndexController>(builder: (context, provider, child) {
         return Scaffold(
           backgroundColor: Colors.white,
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
+                SizedBox(
                     width: 150,
                     height: 150,
                     child: Image.asset('Assets/logo_quiz_app.png')),
@@ -71,15 +66,9 @@ class HomeScreen extends StatelessWidget {
                     provider.restartIndexForQuestion();
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => FirstPage()));
-                        
-                    // setState(() {
-                    //   Navigator.pushReplacement(context,
-                    //       MaterialPageRoute(builder: (context) => FirstPage()));
-                    // });
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
-                    // elevation: 0
                   ),
                   child: Text(
                     'START QUIZ',

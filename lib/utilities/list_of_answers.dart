@@ -1,5 +1,5 @@
-List<String> optionOne = [
-    'Click next',
+const List<String> optionOne = [
+    '',
     'Drone', // =>Correct Answer For Question NO:1
     'Constance',
     'Input',
@@ -11,8 +11,8 @@ List<String> optionOne = [
     'Compilation',
     'Compilation'
   ];
-  List<String> optionTwo = [
-    'Click next',
+  const List<String> optionTwo = [
+    '',
     '3D Printer',
     'Ability',
     'Intelligent agent',// =>Correct Answer For Question NO:3
@@ -26,7 +26,7 @@ List<String> optionOne = [
     'Formulation',
   ];
   List<String> optionThree = [
-    'Click next',
+    '',
     'VR Box',
     'Natural intelligence',// =>Correct Answer For Question NO:2
     'Data',
@@ -39,7 +39,7 @@ List<String> optionOne = [
     'Ability',
   ];
   List<String> optionFour = [
-    'Click next',
+    '',
     'Amazon Alexa',
     'Cognition',
     'Processor',

@@ -1,9 +1,5 @@
-
-
 import 'package:flutter/material.dart';
-
-import 'Home_Screen.dart';
-
+import 'package:quizapp2/view/screens/start_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,9 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigateToFirstPage() async {
-    await Future.delayed(Duration(milliseconds: 2200), () {});
+    await Future.delayed(const Duration(milliseconds: 2200), () {});
+    // ignore: use_build_context_synchronously
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) =>  HomeScreen()));
+        context, MaterialPageRoute(builder: (context) => const HomeScreen()));
   }
 
   @override
@@ -32,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child:
             Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          Container(
+          SizedBox(
               width: 150,
               height: 150,
               child: Image.asset('Assets/logo_quiz_app.png')),
